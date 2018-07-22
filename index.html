@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Boardgames</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Gaegu|Sigmar+One" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>🎲Back Shelf Board Games🎲</h1>
+      <div class="border flex-container flex-center">
+        <form id="sign-up" class="sign-up flex-container flex-center">
+          <fieldset>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign Up!">
+          </fieldset>
+        </form>
+        
+        <form id="sign-in" class="Sign-in flex-container flex-center">
+          <fieldset>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign In!">
+          </fieldset>
+        </form>
+        </div>
+      
+      <div class='shelf'>
+      
+        <img src="https://i.imgur.com/2DCwZjX.jpg" alt="BoardGame Shelf" class="center">
+    
+      </div>
     </body>
 </html>
