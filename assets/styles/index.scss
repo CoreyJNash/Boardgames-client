@@ -1,2 +1,28 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+h1 {
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 3px solid black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.border {
+    border: 3px solid #000;
+    margin: 20px;
+    padding: 20px;
+    max-width: 618px;
+    margin-left: auto;
+    margin-right: auto;
+  }
