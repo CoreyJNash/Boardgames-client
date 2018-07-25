@@ -1,12 +1,31 @@
 'use strict'
 
-const api = require('./api')
-const ui = require('./ui')
+const bgapi = require('./bgapi')
+const bgui = require('./bgui')
+const getFormFields = require('../../../lib/get-form-fields')
 
-const onCreateProposal = (event) => {
+const onCreateGame = (event) => {
     event.preventDefault()
     const data = getFormFields(event.target)
-    proposalApi.createProposal(data)
-      .then(proposalUi.createProposalSuccess)
-      .catch(proposalUi.failure)
+    bgapi.createBoardgame(data)
+      .then(bgui.onCreateSuccess)
+      .catch(bgui.onCreateFailure)
+   }
+
+   const onShowGames = function (event) {
+    event.preventDefault()
+    // console.log('onShowGames ran!')
+    bgapi.showGames()
+      .then(bgui.showGamesSucess)
+      .catch(bgui.showGamesFailure)
+      // bgui.showGamesSucess()
+    }
+
+   const addHandlers = () => {
+    $('#create-game').on('submit', onCreateGame)
+    $('#show').on('click', onShowGames)
+   }
+
+   module.exports = {
+       addHandlers
    }

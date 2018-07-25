@@ -86,7 +86,7 @@
     
       </div>
 <div class="crud-buttons">
-<button type="button" class="btn btn-primary-create" data-toggle="modal" data-target=".bd-example-modal-lg">CREATE GAME</button>
+<button id="create" type="button" class="btn btn-primary-create hidden" data-toggle="modal" data-target=".bd-example-modal-lg">CREATE GAME</button>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -94,19 +94,29 @@
       <form id="create-game" class="border">
         <fieldset>
           <legend>Create Game</legend>
-          <input type="text" name="Game Name" placeholder="Game Name">
+          <input type="text" name="boardgame[name]" placeholder="GAME NAME">
           <br>
-          <input type="text" name="GENRE" rows="1" placeholder="GENRE">
+          <input type="text" name="boardgame[genre]" placeholder="GENRE">
           <br>
-          <input type="text" name="GAME CREATOR" rows="1" placeholder="GAME CREATOR">
+          <input type="text" name="boardgame[creator]" placeholder="GAME CREATOR">
           <br>
-          <input type="submit" value="Create Game">
+          <input id="create-games" type="submit" value="Create Game">
         </fieldset>
       </form>
     </div>
   </div>
 </div>
+<button id="show" type="button" class="btn btn-primary-show hidden" data-toggle="modal" data-target=".bd-show-modal-lg">BROWSE ALL GAMES</button>
+
+<div class="modal fade bd-show-modal-lg" tabindex="-2" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div id="show-games-list"></div>
+    </div>
+  </div>
 </div>
+</div>
+
     </body>
     <footer>
       <h4>🎲App Created by: Corey Nash ©2018🎲<h4>

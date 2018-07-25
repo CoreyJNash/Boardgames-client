@@ -57,12 +57,21 @@ h1 {
 
 .modal-content{
     font-family: 'Gaegu', cursive;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
-    max-width: 100%;
+
 }
 
 .btn-primary-create {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    max-width: 100%;
+    font-family: 'Gaegu', cursive;
+    background-color: #038b13;
+    text-align: center;
+    color: #ffff;
+    align-content: center;
+}
+
+.btn-primary-show {
     margin-left: 0 auto;
     margin-right: 0 auto;
     max-width: 100%;
@@ -77,4 +86,5 @@ h1 {
     margin-left: 0 auto;
     margin-right: 0 auto;
     text-align: center;
+    padding: 5px;
 }
