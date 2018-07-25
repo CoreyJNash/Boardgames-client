@@ -15,7 +15,18 @@ const createBoardgame = function (data) {
     })
    }
 
+   const showGames = function () {
+    return $.ajax({
+      url: config.apiUrl + '/boardgames/',
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      }
+    })
+  }
+
    module.exports = {
-       createBoardgame
+       createBoardgame,
+       showGames
    }
    
