@@ -21,14 +21,13 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-//   $('#message').text('Signed in successfully')
-//   $('#message').css('background-color', ' #f7bd2f')
-//   $('#message').css('font-size', '20px')
-//   $('#message').css('text-align', 'center')
+
   $('#signout').removeClass('hidden')
   $('#changepassword').removeClass('hidden')
   $('#signin').addClass('hidden')
   $('#signup').addClass('hidden')
+  $('#create').removeClass('hidden')
+  $('#show').removeClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#sign-in')[0].reset()
   console.log('signInSuccess ran. Data is :', data)
@@ -50,6 +49,8 @@ const signOutSuccess = function () {
   $('#signin').removeClass('hidden')
   $('#changepassword').addClass('hidden')
   $('#signout').addClass('hidden')
+  $('#create').addClass('hidden')
+  $('#show').addClass('hidden')
   $('#sign-out-modal').modal('hide')
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
