@@ -28,6 +28,7 @@
            <input type="submit" value="Sign up!">
          </fieldset>
        </form>
+       <div class="signupmessage"></div>
          </div>
         </div>
        </div>
@@ -84,6 +85,28 @@
         <img src="https://i.imgur.com/2DCwZjX.jpg" alt="BoardGame Shelf" class="center">
     
       </div>
+<div class="crud-buttons">
+<button type="button" class="btn btn-primary-create" data-toggle="modal" data-target=".bd-example-modal-lg">CREATE GAME</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="create-game" class="border">
+        <fieldset>
+          <legend>Create Game</legend>
+          <input type="text" name="Game Name" placeholder="Game Name">
+          <br>
+          <input type="text" name="GENRE" rows="1" placeholder="GENRE">
+          <br>
+          <input type="text" name="GAME CREATOR" rows="1" placeholder="GAME CREATOR">
+          <br>
+          <input type="submit" value="Create Game">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
     </body>
     <footer>
       <h4>🎲App Created by: Corey Nash ©2018🎲<h4>

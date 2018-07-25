@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 h1 {
     text-align: center;
     font-family: 'Gaegu', cursive;
+    font-size: 55px;
 }
 
 .center {
@@ -42,6 +43,7 @@ h1 {
     margin-right: 0 auto;
     max-width: 100%;
     font-family: 'Gaegu', cursive;
+    background-color: #038b13;
     
 }
 
@@ -52,4 +54,27 @@ h1 {
 .hidden {
     display: none;
   }
-  
+
+.modal-content{
+    font-family: 'Gaegu', cursive;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    max-width: 100%;
+}
+
+.btn-primary-create {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    max-width: 100%;
+    font-family: 'Gaegu', cursive;
+    background-color: #038b13;
+    text-align: center;
+    color: #ffff;
+    align-content: center;
+}
+
+.crud-buttons {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    text-align: center;
+}

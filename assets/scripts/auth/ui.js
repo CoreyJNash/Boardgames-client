@@ -3,11 +3,12 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-//   $('#message').text('Signed up successfully')
-//   $('#message').css('background-color', ' #f7bd2f')
-//   $('#message').css('font-size', '20px')
-//   $('#message').css('text-align', 'center')
-//   $('#sign-up')[0].reset()
+  $('#signupmessage').text('Signed up successfully')
+  $('#signupmessage').css('background-color', ' #f7bd2f')
+  $('#signupmessage').css('font-size', '20px')
+  $('#signupmessage').css('text-align', 'center')
+  $('#sign-up-modal').modal('hide')
+  $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
   
 }
@@ -24,18 +25,18 @@ const signInSuccess = function (data) {
 //   $('#message').css('background-color', ' #f7bd2f')
 //   $('#message').css('font-size', '20px')
 //   $('#message').css('text-align', 'center')
-  $('#sign-out').removeClass('hidden')
-  $('#change-password').removeClass('hidden')
-  $('#sign-in').addClass('hidden')
-  $('#sign-up').addClass('hidden')
-//   $('#message').css('timeout', 6000)
-//   $('#sign-in')[0].reset()
+  $('#signout').removeClass('hidden')
+  $('#changepassword').removeClass('hidden')
+  $('#signin').addClass('hidden')
+  $('#signup').addClass('hidden')
+  $('#sign-in-modal').modal('hide')
+  $('#sign-in')[0].reset()
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
 
 const signInFailure = function (error) {
-//   $('#message').text('Error on sign in')
+//   $('#message').text('Error on sign in')b 42n    3
 //   $('#message').css('background-color', 'red')
 //   $('#message').css('text-align', 'center')
   console.error('signInFailure ran. Error is :', error)
@@ -45,11 +46,11 @@ const signOutSuccess = function () {
 //   $('#message').text('Signed out successfully')
 //   $('#message').css('background-color', ' #f7bd2f')
 //   $('#message').css('text-align', 'center')
-  $('#sign-up').removeClass('hidden')
-  $('#sign-in').removeClass('hidden')
-  $('#change-password').addClass('hidden')
-  $('#sign-out').addClass('hidden')
-//   $('#view-games').addClass('hidden')
+  $('#signup').removeClass('hidden')
+  $('#signin').removeClass('hidden')
+  $('#changepassword').addClass('hidden')
+  $('#signout').addClass('hidden')
+  $('#sign-out-modal').modal('hide')
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
@@ -64,6 +65,7 @@ const signOutFailure = function (error) {
 const changePasswordSuccess = function () {
 //   $('#message').text('Changed password successfully')
 //   $('#message').css('background-color', '#f7bd2f')
+    $('#change-password-modal').modal('hide')
   console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
