@@ -25,8 +25,16 @@ const createBoardgame = function (data) {
     })
   }
 
+  const deleteGame = (boardgameId) => {
+    return $.ajax({
+      url: config.apiUrl + '/boardgames/' + boardgameId,
+      method: 'DELETE'
+    })
+  }
+
    module.exports = {
        createBoardgame,
-       showGames
+       showGames,
+       deleteGame
    }
    

@@ -28,6 +28,7 @@ const signInSuccess = function (data) {
   $('#signup').addClass('hidden')
   $('#create').removeClass('hidden')
   $('#show').removeClass('hidden')
+  $('#update').removeClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#sign-in')[0].reset()
   console.log('signInSuccess ran. Data is :', data)
@@ -51,6 +52,7 @@ const signOutSuccess = function () {
   $('#signout').addClass('hidden')
   $('#create').addClass('hidden')
   $('#show').addClass('hidden')
+  $('#update').addClass('hidden')
   $('#sign-out-modal').modal('hide')
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null

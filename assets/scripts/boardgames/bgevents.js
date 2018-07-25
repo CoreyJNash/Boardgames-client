@@ -4,6 +4,7 @@ const bgapi = require('./bgapi')
 const bgui = require('./bgui')
 const getFormFields = require('../../../lib/get-form-fields')
 
+
 const onCreateGame = (event) => {
     event.preventDefault()
     const data = getFormFields(event.target)
@@ -21,9 +22,19 @@ const onCreateGame = (event) => {
       // bgui.showGamesSucess()
     }
 
+    const onDeleteGame = (event) => {
+        event.preventDefault()
+        const boardgameId = $(event.target).closest('ul').attr('data-id')
+        // console.log("delete: " + boardgameId)
+        bgapi.deleteGame(boardgameId)
+          .then(() => {console.log('deleted')})
+          .catch(() => {console.log('not deleted')})
+      }
+
    const addHandlers = () => {
     $('#create-game').on('submit', onCreateGame)
     $('#show').on('click', onShowGames)
+    $('.delete').on('click', onDeleteGame)
    }
 
    module.exports = {

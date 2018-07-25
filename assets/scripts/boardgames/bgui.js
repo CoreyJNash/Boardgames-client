@@ -1,6 +1,8 @@
 'use strict'
 const store = require ('../store.js')
 const boardgameTemplate = require ('../templates/allboardgames.handlebars')
+const bgapi = require ('./bgapi.js')
+
 
 const onCreateSuccess = function (data) {
 //   $('#message').text('Game successfully created')
@@ -21,6 +23,15 @@ const onCreateFailure = function (error) {
       console.log(data)
       let htmltemplate = boardgameTemplate({boardgames: data.boardgames})
       $('#show-games-list').append(htmltemplate)
+      $('.delete').on('click', onDeleteGame)
+  }
+
+  const onDeleteGame = (event) => {
+    event.preventDefault()
+    const boardgameId = $(event.target).closest('ul').attr('data-id')
+    // console.log("delete: " + boardgameId)
+    bgapi.deleteGame(boardgameId)
+      .then(() => onShowGames(event))
   }
   
   const showGamesFailure = function (error) {
@@ -29,9 +40,15 @@ const onCreateFailure = function (error) {
     // console.error('onShowFailure ran. Error is :', error)
   }
 
+  const failure = (error) => {
+    console.error(error)
+  }
+
 module.exports = {
     onCreateSuccess,
     onCreateFailure,
     showGamesSucess,
-    showGamesFailure
+    onDeleteGame,
+    showGamesFailure,
+    failure
 }

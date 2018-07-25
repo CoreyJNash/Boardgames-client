@@ -1,7 +1,19 @@
 {{#each boardgames as |boardgame|}}
+<div class="show-wrapper">
 <h1><b>{{boardgame.name}}</b></h1>
 <h3>GENRE: {{boardgame.genre}}</h3>
 <h3>CREATOR: {{boardgame.creator}}</h3>
+
+  <ul data-id="{{boardgame.id}}"> 
+    <li>{{#if boardgame.name}}
+      {{boardgame.name}}
+      {{else}}
+      No game
+      {{/if}}
+    </li>
+    <li><button class="delete" type="submit">DELETE</button></li>
+  </ul>
+</div>
 
 
 {{/each}}

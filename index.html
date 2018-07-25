@@ -112,6 +112,27 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
      <div id="show-games-list"></div>
+     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+<button id="update" type="button" class="btn btn-primary-update hidden" data-toggle="modal" data-target=".bd-update-modal-lg">UPDATE GAMES</button>
+
+<div class="modal fade bd-update-modal-lg" tabindex="-3" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="update-game" class="border">
+        <fieldset>
+          <legend>Update Game</legend>
+          <input type="text" name="boardgame[name]" placeholder="GAME NAME">
+          <br>
+          <input type="text" name="boardgame[genre]" placeholder="GENRE">
+          <br>
+          <input type="text" name="boardgame[creator]" placeholder="GAME CREATOR">
+          <br>
+          <input id="update-games" type="submit" value="Update Game">
+        </fieldset>
+      </form>
     </div>
   </div>
 </div>
