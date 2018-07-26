@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://dashboard.heroku.com/apps/gentle-temple-31740',
+  production: 'https://gentle-temple-31740.herokuapp.com/',
   development: 'http://localhost:4741'
 }
 
