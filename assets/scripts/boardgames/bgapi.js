@@ -32,9 +32,18 @@ const createBoardgame = function (data) {
     })
   }
 
+  const updateGame = function (data) {
+    return $.ajax({
+      url: config.apiOrigin + '/boardgames/' + data.boardgames.id,
+      method: 'PATCH',
+      data
+    })
+  }
+
    module.exports = {
        createBoardgame,
        showGames,
-       deleteGame
+       deleteGame,
+       updateGame
    }
    

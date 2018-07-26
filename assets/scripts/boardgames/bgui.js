@@ -31,7 +31,7 @@ const onCreateFailure = function (error) {
     const boardgameId = $(event.target).closest('ul').attr('data-id')
     // console.log("delete: " + boardgameId)
     bgapi.deleteGame(boardgameId)
-      .then(() => onShowGames(event))
+      .then(() => (event))
   }
   
   const showGamesFailure = function (error) {
@@ -44,11 +44,19 @@ const onCreateFailure = function (error) {
     console.error(error)
   }
 
+  const updateGameSuccess = function (data) {
+    $('#message').text('Example successfully created')
+    $('#message').css('background-color', 'green')
+    store.boardgame = data.boardgame
+    console.log('onUpdateSuccess ran. Data is :', data)
+  }
+
 module.exports = {
     onCreateSuccess,
     onCreateFailure,
     showGamesSucess,
     onDeleteGame,
     showGamesFailure,
-    failure
+    failure,
+    updateGameSuccess
 }
