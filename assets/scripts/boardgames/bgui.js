@@ -7,7 +7,8 @@ const bgapi = require ('./bgapi.js')
 const onCreateSuccess = function (data) {
 //   $('#message').text('Game successfully created')
 //   $('#message').css('background-color', 'green')
-  $('#modal').modal('hide')
+  $('#create-game-modal').modal('hide')
+  $('#create-game')[0].reset()
 
   store.game = data.game
   console.log('onCreateSuccess ran. Data is :', data)
