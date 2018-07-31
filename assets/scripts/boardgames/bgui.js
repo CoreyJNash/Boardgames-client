@@ -23,8 +23,20 @@ const onCreateFailure = function (error) {
   const showGamesSucess = function (data) {
       console.log(data)
       let htmltemplate = boardgameTemplate({boardgames: data.boardgames})
-      $('#show-games-list').append(htmltemplate)
+      $('#show-games-list').html(htmltemplate)
       $('.delete').on('click', onDeleteGame)
+      $('#message').addClass('hidden')
+  }
+
+  const onDeleteGameSucess = function () {
+    $('#message').html('Game has been Deleted')
+    $('#message').css('background-color', 'green')
+    $('#message').css('font-size', '20px')
+    $('#message').css('text-align', 'center')
+    $('#message').css('font-family', 'Gaegu')
+    $('#message').removeClass('hidden')
+    $('#show-game-modal').modal('hide')
+   
   }
 
   const onDeleteGame = (event) => {
@@ -32,7 +44,7 @@ const onCreateFailure = function (error) {
     const boardgameId = $(event.target).closest('ul').attr('data-id')
     // console.log("delete: " + boardgameId)
     bgapi.deleteGame(boardgameId)
-      .then(() => (event))
+      .then(onDeleteGameSucess)
   }
   
   const showGamesFailure = function (error) {
@@ -40,6 +52,8 @@ const onCreateFailure = function (error) {
     $('#message').css('background-color', 'red')
     // console.error('onShowFailure ran. Error is :', error)
   }
+
+  
 
   const failure = (error) => {
     console.error(error)
@@ -59,5 +73,6 @@ module.exports = {
     onDeleteGame,
     showGamesFailure,
     failure,
-    updateGameSuccess
+    updateGameSuccess,
+    onDeleteGameSucess
 }
