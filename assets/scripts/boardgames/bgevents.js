@@ -22,14 +22,14 @@ const onCreateGame = (event) => {
       // bgui.showGamesSucess()
     }
 
-    const onDeleteGame = (event) => {
-        event.preventDefault()
-        const boardgameId = $(event.target).closest('ul').attr('data-id')
-        // console.log("delete: " + boardgameId)
-        bgapi.deleteGame(boardgameId)
-          .then(() => {console.log('deleted')})
-          .catch(() => {console.log('not deleted')})
-      }
+    // const onDeleteGame = (event) => {
+    //     event.preventDefault()
+    //     const boardgameId = $(event.target).closest('ul').attr('data-id')
+    //     // console.log("delete: " + boardgameId)
+    //     bgapi.deleteGame(boardgameId)
+    //       .then(bgui.onDeleteGameSucess)
+    //       .catch(() => {console.log('not deleted')})
+    //   }
 
     const onUpdateGame = (event) => {
         event.preventDefault()
@@ -44,7 +44,7 @@ const onCreateGame = (event) => {
    const addHandlers = () => {
     $('#create-game').on('submit', onCreateGame)
     $('#show').on('click', onShowGames)
-    $('.delete').on('click', onDeleteGame)
+    // $('.delete').on('click', onDeleteGame)
     $('#update-games').on('click', onUpdateGame)
    }
 
