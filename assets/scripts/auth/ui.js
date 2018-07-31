@@ -3,10 +3,10 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#signupmessage').text('Signed up successfully')
-  $('#signupmessage').css('background-color', ' #f7bd2f')
-  $('#signupmessage').css('font-size', '20px')
-  $('#signupmessage').css('text-align', 'center')
+  $('#message').text('Signed up successfully')
+  $('#message').css('background-color', 'green')
+  $('#message').css('font-size', '20px')
+  $('#message').css('text-align', 'center')
   $('#sign-up-modal').modal('hide')
   $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
@@ -14,9 +14,10 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-//   $('#message').text('Error on sign up')
-//   $('#message').css('background-color', 'red')
-//   $('#message').css('text-align', 'center')
+  $('#message').text('Error on sign up')
+  $('#message').css('background-color', 'red')
+  $('#message').css('text-align', 'center')
+  $('#sign-up-modal').modal('hide')
   console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -28,6 +29,7 @@ const signInSuccess = function (data) {
   $('#signup').addClass('hidden')
   $('#create').removeClass('hidden')
   $('#show').removeClass('hidden')
+  $('#message').addClass('hidden')
   $('#update').removeClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#sign-in')[0].reset()
