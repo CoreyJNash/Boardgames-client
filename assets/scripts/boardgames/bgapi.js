@@ -28,7 +28,10 @@ const createBoardgame = function (data) {
   const deleteGame = (boardgameId) => {
     return $.ajax({
       url: config.apiUrl + '/boardgames/' + boardgameId,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      }
     })
   }
 
