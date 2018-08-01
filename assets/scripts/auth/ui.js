@@ -7,6 +7,7 @@ const signUpSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('#message').css('font-size', '20px')
   $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
   $('#sign-up-modal').modal('hide')
   $('#sign-up')[0].reset()
   console.log('signUpSuccess ran. Data is :', data)
@@ -17,7 +18,9 @@ const signUpFailure = function (error) {
   $('#message').text('Error on sign up')
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
   $('#sign-up-modal').modal('hide')
+  $('#sign-in')[0].reset()
   console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -38,9 +41,12 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-//   $('#message').text('Error on sign in')b 42n    3
-//   $('#message').css('background-color', 'red')
-//   $('#message').css('text-align', 'center')
+  $('#message').text('Error on sign in')
+  $('#message').css('background-color', 'red')
+  $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
+  $('#sign-in-modal').modal('hide')
+  $('#sign-in')[0].reset()
   console.error('signInFailure ran. Error is :', error)
 }
 
