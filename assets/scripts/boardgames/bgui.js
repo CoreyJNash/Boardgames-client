@@ -59,12 +59,19 @@ const onCreateFailure = function (error) {
     console.error(error)
   }
 
+  // const updateGameSuccess = function (data) {
+  //   $('#message').text('Example successfully created')
+  //   $('#message').css('background-color', 'green')
+  //   store.boardgame = data.boardgame
+  //   console.log('onUpdateSuccess ran. Data is :', data)
+  // }
+
   const updateGameSuccess = function (data) {
-    $('#message').text('Example successfully created')
+    $('#message').text('Game Has Been Updated!')
     $('#message').css('background-color', 'green')
-    store.boardgame = data.boardgame
+    store.boardgames = data.boardgames
     console.log('onUpdateSuccess ran. Data is :', data)
-  }
+   }
 
 module.exports = {
     onCreateSuccess,
