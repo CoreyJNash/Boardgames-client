@@ -17,6 +17,7 @@ const onCreateSuccess = function (data) {
 const onCreateFailure = function (error) {
     $('#message').text('Error on creating Game')
     $('#message').css('background-color', 'red')
+    $('#create-game')[0].reset()
     console.error('onCreateFailure ran. Error is :', error)
   }
 
@@ -59,18 +60,16 @@ const onCreateFailure = function (error) {
     console.error(error)
   }
 
-  // const updateGameSuccess = function (data) {
-  //   $('#message').text('Example successfully created')
-  //   $('#message').css('background-color', 'green')
-  //   store.boardgame = data.boardgame
-  //   console.log('onUpdateSuccess ran. Data is :', data)
-  // }
-
   const updateGameSuccess = function (data) {
     $('#message').text('Game Has Been Updated!')
+    $('#message').css('font-family', 'Gaegu')
+    $('#message').cdd('text-align', 'center')
+    $('#message').removeClass('hidden')
     $('#message').css('background-color', 'green')
+    $('#update-modal').modal('hide')
+    $('#update-game')[0].reset()
     store.boardgames = data.boardgames
-    console.log('onUpdateSuccess ran. Data is :', data)
+    // console.log('onUpdateSuccess ran. Data is :', data)
    }
 
 module.exports = {

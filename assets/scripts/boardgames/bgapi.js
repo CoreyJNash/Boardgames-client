@@ -43,9 +43,9 @@ const createBoardgame = function (data) {
   //   })
   // }
 
-  const updateGame = function (data) {
+  const updateGame = function (data) { 
     return $.ajax({
-      url: config.apiUrl + '/boardgames/' + data.boardgameId,
+      url: config.apiUrl + '/boardgames/' + data.boardgame.id, 
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + store.user.token

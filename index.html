@@ -24,8 +24,8 @@
            <legend>Sign up!</legend>
            <h4>Email and Password are Case Sensitive!</h4>
            <input type="text" name="credentials[email]" placeholder="Email">
-           <input type="text" name="credentials[password]" placeholder="Password">
-           <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+           <input type="password" name="credentials[password]" placeholder="Password">
+           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
            <input type="submit" value="Sign up!">
          </fieldset>
        </form>
@@ -120,7 +120,7 @@
 </div>
 <button id="update" type="button" class="btn btn-primary-update hidden" data-toggle="modal" data-target=".bd-update-modal-lg">UPDATE GAMES</button>
 
-<div class="modal fade bd-update-modal-lg" tabindex="-3" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="update-modal" class="modal fade bd-update-modal-lg" tabindex="-3" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <form id="update-game" class="border">
@@ -134,7 +134,7 @@
           <br>
           <input type="text" name="boardgame[creator]" placeholder="GAME CREATOR">
           <br>
-          <input id="update-games" type="submit" value="Update Game">
+          <input type="submit" value="Update Game">
         </fieldset>
       </form>
     </div>
