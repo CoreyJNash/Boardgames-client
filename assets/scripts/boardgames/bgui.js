@@ -5,20 +5,23 @@ const bgapi = require ('./bgapi.js')
 
 
 const onCreateSuccess = function (data) {
-//   $('#message').text('Game successfully created')
-//   $('#message').css('background-color', 'green')
+  $('#message').text('Game successfully created')
+  $('#message').css('background-color', 'green')
+  $('#message').css('font-family', 'Gaegu')
+  $('#message').css('text-align', 'center')
+  $('#message').removeClass('hidden')
   $('#create-game-modal').modal('hide')
   $('#create-game')[0].reset()
 
   store.game = data.game
-  console.log('onCreateSuccess ran. Data is :', data)
+  // console.log('onCreateSuccess ran. Data is :', data)
 }
 
 const onCreateFailure = function (error) {
     $('#message').text('Error on creating Game')
     $('#message').css('background-color', 'red')
     $('#create-game')[0].reset()
-    console.error('onCreateFailure ran. Error is :', error)
+    // console.error('onCreateFailure ran. Error is :', error)
   }
 
   const showGamesSucess = function (data) {
@@ -57,7 +60,7 @@ const onCreateFailure = function (error) {
   
 
   const failure = (error) => {
-    console.error(error)
+    // console.error(error)
   }
 
   const updateGameSuccess = function (data) {

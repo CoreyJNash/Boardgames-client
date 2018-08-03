@@ -35,14 +35,6 @@ const createBoardgame = function (data) {
     })
   }
 
-  // const updateGame = function (data) {
-  //   return $.ajax({
-  //     url: config.apiOrigin + '/boardgames/' + data.boardgames.id,
-  //     method: 'PATCH',
-  //     data
-  //   })
-  // }
-
   const updateGame = function (data) { 
     return $.ajax({
       url: config.apiUrl + '/boardgames/' + data.boardgame.id, 
