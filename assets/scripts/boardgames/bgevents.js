@@ -21,19 +21,11 @@ const onCreateGame = (event) => {
       .catch(bgui.showGamesFailure)
       // bgui.showGamesSucess()
     }
-
-    const onDeleteGame = (event) => {
-        event.preventDefault()
-        const boardgameId = $(event.target).closest('ul').attr('data-id')
-        // console.log("delete: " + boardgameId)
-        bgapi.deleteGame(boardgameId)
-          .then(() => {console.log('deleted')})
-          .catch(() => {console.log('not deleted')})
-      }
-
+    
     const onUpdateGame = (event) => {
         event.preventDefault()
         const data = getFormFields(event.target)
+        console.log(getFormFields(event.target))
         bgapi.updateGame(data)
           .then(bgui.updateGameSuccess)
           .catch(bgui.failure)
@@ -44,8 +36,8 @@ const onCreateGame = (event) => {
    const addHandlers = () => {
     $('#create-game').on('submit', onCreateGame)
     $('#show').on('click', onShowGames)
-    $('.delete').on('click', onDeleteGame)
-    $('#update-games').on('click', onUpdateGame)
+    // $('.delete').on('click', onDeleteGame)
+    $('#update-game').on('submit', onUpdateGame)
    }
 
    module.exports = {

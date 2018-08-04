@@ -3,21 +3,25 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#signupmessage').text('Signed up successfully')
-  $('#signupmessage').css('background-color', ' #f7bd2f')
-  $('#signupmessage').css('font-size', '20px')
-  $('#signupmessage').css('text-align', 'center')
+  $('#message').text('Signed up successfully')
+  $('#message').css('background-color', 'green')
+  $('#message').css('font-size', '20px')
+  $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
   $('#sign-up-modal').modal('hide')
   $('#sign-up')[0].reset()
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
   
 }
 
 const signUpFailure = function (error) {
-//   $('#message').text('Error on sign up')
-//   $('#message').css('background-color', 'red')
-//   $('#message').css('text-align', 'center')
-  console.error('signUpFailure ran. Error is :', error)
+  $('#message').text('Error on sign up')
+  $('#message').css('background-color', 'red')
+  $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
+  $('#sign-up-modal').modal('hide')
+  $('#sign-in')[0].reset()
+  // console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
@@ -28,18 +32,22 @@ const signInSuccess = function (data) {
   $('#signup').addClass('hidden')
   $('#create').removeClass('hidden')
   $('#show').removeClass('hidden')
+  $('#message').addClass('hidden')
   $('#update').removeClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#sign-in')[0].reset()
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
 
 const signInFailure = function (error) {
-//   $('#message').text('Error on sign in')b 42n    3
-//   $('#message').css('background-color', 'red')
-//   $('#message').css('text-align', 'center')
-  console.error('signInFailure ran. Error is :', error)
+  $('#message').text('Error on sign in')
+  $('#message').css('background-color', 'red')
+  $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
+  $('#sign-in-modal').modal('hide')
+  $('#sign-in')[0].reset()
+  // console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {
@@ -54,7 +62,7 @@ const signOutSuccess = function () {
   $('#show').addClass('hidden')
   $('#update').addClass('hidden')
   $('#sign-out-modal').modal('hide')
-  console.log('signOutSuccess ran and nothing was returned!')
+  // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 
@@ -62,20 +70,23 @@ const signOutFailure = function (error) {
 //   $('#message').text('Error on sign out')
 //   $('#message').css('background-color', 'red')
 //   $('#message').css('text-align', 'center')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function () {
-//   $('#message').text('Changed password successfully')
-//   $('#message').css('background-color', '#f7bd2f')
+  $('#message').text('Changed password successfully')
+  $('#message').css('background-color', 'green')
+  $('#message').css('font-family', 'Gaegu')
+  $('#message').css('text-align', 'center')
     $('#change-password-modal').modal('hide')
-  console.log('changePasswordSuccess ran and nothing was returned!')
+    $('#change-password')[0].reset()
+  // console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
 const changePasswordFailure = function (error) {
 //   $('#message').text('Error on change password')
 // //   $('#message').css('background-color', 'red')
-console.error('changePasswordFailure ran. Error is :', error)
+// console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {

@@ -28,14 +28,20 @@ const createBoardgame = function (data) {
   const deleteGame = (boardgameId) => {
     return $.ajax({
       url: config.apiUrl + '/boardgames/' + boardgameId,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      }
     })
   }
 
-  const updateGame = function (data) {
+  const updateGame = function (data) { 
     return $.ajax({
-      url: config.apiOrigin + '/boardgames/' + data.boardgames.id,
+      url: config.apiUrl + '/boardgames/' + data.boardgame.id, 
       method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      },
       data
     })
   }
