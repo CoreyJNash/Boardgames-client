@@ -66,7 +66,7 @@ const onCreateFailure = function (error) {
   const updateGameSuccess = function (data) {
     $('#message').text('Game Has Been Updated!')
     $('#message').css('font-family', 'Gaegu')
-    $('#message').cdd('text-align', 'center')
+    $('#message').css('text-align', 'center')
     $('#message').removeClass('hidden')
     $('#message').css('background-color', 'green')
     $('#update-modal').modal('hide')
