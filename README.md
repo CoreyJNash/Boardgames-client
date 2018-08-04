@@ -37,4 +37,4 @@ I would also like to add some more styling with cool gaming Icons that could be 
 
 WIREFRAME:
 ----------
-[WIREFRAME]: https://i.imgur.com/mY9opSM.jpg
+[WIREFRAME:] https://i.imgur.com/mY9opSM.jpg
