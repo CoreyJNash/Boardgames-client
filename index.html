@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Boardgames</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Gaegu|Sigmar+One" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>🎲Top Shelf Board Games🎲</h1>
+      <div class="wrapper">
+        <button id="signup" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+       <div id="sign-up-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+         <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+             <form id="sign-up" class="border">
+         <fieldset>
+           <legend>Sign up!</legend>
+           <h4>Email and Password are Case Sensitive!</h4>
+           <input type="text" name="credentials[email]" placeholder="Email">
+           <input type="password" name="credentials[password]" placeholder="Password">
+           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+           <input type="submit" value="Sign up!">
+         </fieldset>
+       </form>
+       <div class="signupmessage"></div>
+         </div>
+        </div>
+       </div>
+  
+       <button id="signin" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+       <div id="sign-in-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+         <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+             <form id="sign-in" class="border">
+         <fieldset>
+           <legend>Sign in!</legend>
+           <h4>Email and Password are Case Sensitive!</h4>
+           <input type="text" name="credentials[email]" placeholder="Email">
+           <input type="password" name="credentials[password]" placeholder="Password">
+           <input type="submit" value="Sign in!">
+         </fieldset>
+       </form>
+         </div>
+        </div>
+       </div>
+  
+       <button id="changepassword" type="button" class="btn btn-primary hidden" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+       <div id="change-password-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+         <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+             <form id="change-password" class="border">
+         <fieldset>
+           <legend>Change Password!</legend>
+           <input type="password" name="passwords[old]" placeholder="Old Password">
+           <input type="password" name="passwords[new]" placeholder="New Password">
+           <input type="submit" value="Change Password!">
+         </fieldset>
+       </form>
+         </div>
+        </div>
+       </div>
+       
+       <button id="signout" type="button" class="btn btn-primary hidden" data-toggle="modal" data-target="#sign-out-modal">Sign Out</button>
+     <div id="sign-out-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+       <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+           <form id="sign-out" class="border">
+       <fieldset>
+         <legend>Sign Out!</legend>
+         <input type="submit" value="Sign Out!">
+       </fieldset>
+     </form>
+       </div>
+       </div>
+       </div>
+       </div>
+       <div id="message"></div>
+      
+       <div class='shelf'>
+      
+        <img src="https://i.imgur.com/2DCwZjX.jpg" alt="BoardGame Shelf" class="center">
+    
+      </div>
+<div class="crud-buttons">
+<button id="create" type="button" class="btn btn-primary-create hidden" data-toggle="modal" data-target=".bd-example-modal-lg">CREATE GAME</button>
+
+<div id="create-game-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="create-game" class="border">
+        <fieldset>
+          <legend>Create Game</legend>
+          <input type="text" name="boardgame[name]" placeholder="GAME NAME">
+          <br>
+          <input type="text" name="boardgame[genre]" placeholder="GENRE">
+          <br>
+          <input type="text" name="boardgame[creator]" placeholder="GAME CREATOR">
+          <br>
+          <input id="create-games" type="submit" value="Create Game">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<button id="show" type="button" class="btn btn-primary-show hidden" data-toggle="modal" data-target=".bd-show-modal-lg">BROWSE ALL GAMES</button>
+
+<div id="show-game-modal" class="modal fade bd-show-modal-lg" tabindex="-2" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div id="show-games-list"></div>
+     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+<button id="update" type="button" class="btn btn-primary-update hidden" data-toggle="modal" data-target=".bd-update-modal-lg">UPDATE GAMES</button>
+
+<div id="update-modal" class="modal fade bd-update-modal-lg" tabindex="-3" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="update-game" class="border">
+        <fieldset>
+          <legend>Update Game</legend>
+          <input type="text" name="boardgame[id]" placeholder="GAME ID">
+          <br>
+          <input type="text" name="boardgame[name]" placeholder="GAME NAME">
+          <br>
+          <input type="text" name="boardgame[genre]" placeholder="GENRE">
+          <br>
+          <input type="text" name="boardgame[creator]" placeholder="GAME CREATOR">
+          <br>
+          <input type="submit" value="Update Game">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+    </body>
+    <footer>
+      <h4>🎲App Created by: Corey Nash ©2018🎲<h4>
+        <h4>Photo Credit: TheCastleBeverly</h4>
+    </footer>
+</html>
