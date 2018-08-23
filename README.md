@@ -1,6 +1,18 @@
 WDI-PVD-03 PROJECT #2 - FRONT END CLIENT BOARDGAMES SITE
 ==========================================================
 
+LINK TO BACKEND REPO:
+---------------------
+https://github.com/CoreyJNash/BackEndBoardGames
+
+LINK TO DEPLOYED FRONT END SITE:
+---------------------
+https://coreyjnash.github.io/Boardgames-client/
+
+LINK TO DEPLOYED BACKEND:
+------------------------
+https://gentle-temple-31740.herokuapp.com/
+
 OVERVIEW:
 ---------
 
@@ -37,4 +49,4 @@ I would also like to add some more styling with cool gaming Icons that could be 
 
 WIREFRAME:
 ----------
-[WIREFRAME]: https://i.imgur.com/mY9opSM.jpg
+![WIREFRAME](https://i.imgur.com/mY9opSM.jpg)

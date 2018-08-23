@@ -20,7 +20,7 @@ const signUpFailure = function (error) {
   $('#message').css('text-align', 'center')
   $('#message').css('font-family', 'Gaegu')
   $('#sign-up-modal').modal('hide')
-  $('#sign-in')[0].reset()
+  $('#sign-up')[0].reset()
   // console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -84,9 +84,12 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFailure = function (error) {
-//   $('#message').text('Error on change password')
-// //   $('#message').css('background-color', 'red')
+  $('#message').text('Error on change password')
+  $('#message').css('background-color', 'red')
+  $('#message').css('text-align', 'center')
+  $('#message').css('font-family', 'Gaegu')
 // console.error('changePasswordFailure ran. Error is :', error)
+$('#change-password')[0].reset()
 }
 
 module.exports = {

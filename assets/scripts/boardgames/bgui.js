@@ -60,6 +60,14 @@ const onCreateFailure = function (error) {
   
 
   const failure = (error) => {
+    $('#message').text('Can not update another users game!')
+    $('#message').css('font-family', 'Gaegu')
+    $('#message').css('background-color', 'red')
+    $('#message').css('text-align', 'center')
+    $('#message').css('font-size', '20px')
+    $('#update-modal').modal('hide')
+    $('#message').removeClass('hidden')
+    $('#update-game')[0].reset()
     // console.error(error)
   }
 
